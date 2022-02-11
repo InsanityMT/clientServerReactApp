@@ -1,5 +1,7 @@
-import Hotels from './hotels'
+import TravelAdvisor from './TravelAdvisor'
+import CoinRanking from './CoinRanking'
 
 export {
-    Hotels
+    TravelAdvisor,
+    CoinRanking
 }

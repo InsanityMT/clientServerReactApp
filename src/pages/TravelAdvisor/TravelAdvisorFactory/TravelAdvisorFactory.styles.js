@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const HotelStyles = styled.div`
+const TravelAdvisorFactoryStyles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,11 +12,11 @@ const Cards = styled.div`
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
-    height: 800px;
+    height: 700px;
     overflow-y: scroll;
 `
 
 export {
-    HotelStyles,
+    TravelAdvisorFactoryStyles,
     Cards
 }

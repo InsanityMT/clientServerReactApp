@@ -15,7 +15,7 @@ const Card = ({ item }) => {
                     <CardContent>
                         <span>{price}</span>
                         <span>{num_reviews} reviews - {rating}</span>
-                        <span>{hotel_class} ★</span>
+                        {hotel_class && <span>{hotel_class} ★</span>}
                     </CardContent>
                 </CardStyles>
             }
