@@ -17,6 +17,7 @@ const useDefaultPageFunc = (typeRequest) => {
         }
     }, [pathname])
 
+
     const handlePageClick = (page) => {
         requestResolver([
             typeRequest[pathname.split('/')[2]]?.get,
