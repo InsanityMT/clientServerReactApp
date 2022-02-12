@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 const CardStyles = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@600&family=Quintessential&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+    font-family: 'Noto Sans', sans-serif;
     border-radius: 8px;
     padding: 0.5rem 0;
     margin: 0.5rem 1rem;
@@ -16,11 +17,12 @@ const CardContent = styled.div`
     padding: 10px;
     color: #808080FF;
     display: flex;
+    font-size: 24px;
     flex-direction: column;
 `
 const CardName = styled.div`
     font-family: 'Prompt', sans-serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     padding: 10px;
 `

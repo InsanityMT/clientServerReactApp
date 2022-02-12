@@ -1,4 +1,5 @@
 import { API_KEY } from './default-api-keys'
+import { PAGE_SIZE } from './system-params'
 
 const BASE_URL = 'travel-advisor.p.rapidapi.com'
 
@@ -15,7 +16,7 @@ const travelAdvisor = {
                 offset: '0',
                 currency: 'USD',
                 order: 'asc',
-                limit: '30',
+                limit: PAGE_SIZE,
                 sort: 'recommended',
                 lang: 'en_US',
             },
@@ -35,7 +36,7 @@ const travelAdvisor = {
                 restaurant_tagcategory_standalone: '10591',
                 currency: 'USD',
                 lunit: 'km',
-                limit: '30',
+                limit: PAGE_SIZE,
                 open_now: 'false',
                 lang: 'en_US'
             },

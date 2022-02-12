@@ -5,7 +5,11 @@ import Header from '../../components/Header'
 const TravelAdvisor = () => {
     return (
         <>
-            <Header routes={routes} title='Travel Advisor' root='/travel-advisor'/>
+            <Header
+                routes={routes}
+                title='Travel Advisor'
+                root='/travel-advisor'
+            />
             <Outlet />
         </>
     )

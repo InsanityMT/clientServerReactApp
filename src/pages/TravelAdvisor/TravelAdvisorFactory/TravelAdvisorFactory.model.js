@@ -1,16 +1,22 @@
 import React from 'react'
-import useDefaultPageFunc from '../../../hooks/useDefaultPageFunc'
-import TravelAdvisorFactoryView from './TravelAdvisorFactory.view'
+import useDataFromRequest from '../../../hooks/useDataFromRequest'
+import { useLocation } from 'react-router-dom'
 import travelAdvisor from '../../../constants/travel-advisor'
+import TravelAdvisorFactoryView from './TravelAdvisorFactory.view'
 
 const TravelAdvisorFactory = () => {
-    const { data, isLoading, handlePageClick } = useDefaultPageFunc(travelAdvisor)
+    const { pathname } = useLocation()
+    const request = travelAdvisor[pathname.split('/')[2]].get
+    const { data, isLoading, handlePageClick } = useDataFromRequest(request)
 
-    return (        <TravelAdvisorFactoryView
-            data={data}
-            isLoading={isLoading}
-            handlePageClick={handlePageClick}
-        />
+    return (
+        <>
+            <TravelAdvisorFactoryView
+                data={data || []}
+                isLoading={isLoading}
+                handlePageClick={(page) => handlePageClick(request, page)}
+            />
+        </>
     )
 }
 
