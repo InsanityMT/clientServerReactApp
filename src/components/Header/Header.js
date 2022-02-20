@@ -11,9 +11,8 @@ const Header = ({ routes, title, root }) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         {routes.map(({path, name}, idx) =>
-                            <Nav.Item>
+                            <Nav.Item key={idx}>
                                 <NavLink
-                                    key={idx}
                                     to={path}
                                     className={({ isActive }) => `${isActive && 'active-nav-link'} nav-link`}
                                 >
