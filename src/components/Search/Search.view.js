@@ -1,27 +1,22 @@
-import React, { useMemo, useState } from 'react'
-import { FormControl } from './Search.styles'
-import coinsRanking from '../../constants/coins-ranking'
-import useDataFromRequest from '../../hooks/useDataFromRequest'
+import React from 'react'
+import { components } from 'react-select'
+import _ from 'lodash'
+import SearchBar from './Search.styles'
 
-const Search = ({ handleChange }) => {
-
-    const [searchValue, setSearchValue] = useState('')
-    const request = useMemo(() => coinsRanking.coins.get(searchValue), [searchValue])
-    const { data, isLoading } = useDataFromRequest(request)
-    const { coins } = data
-
+const SearchView = ({ onChangeHandle, isLoading, data, CustomOption }) => {
     return (
         <>
-            <FormControl
-                minLength={2}
-                debounceTimeout={1500}
-                onChange={(e) => setSearchValue(e.target.value)} />
-            {
-                coins && 
-            }
+            <SearchBar
+                onInputChange={_.debounce(onChangeHandle, 500)}
+                options={data}
+                components={{
+                    Option: CustomOption || components.Option
+                }}
+                isLoading={isLoading}
+            />
         </>
 
     )
 }
 
-export default Search
+export default SearchView
