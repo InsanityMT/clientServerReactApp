@@ -8,7 +8,6 @@ const Coin = () => {
     const { id } = useParams()
     const request = useMemo(() => coinsRanking.coin.get(id), [id])
     const { data, isLoading } = useDataFromRequest(request)
-
     return (
         <>
             {

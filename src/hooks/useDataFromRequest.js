@@ -7,19 +7,23 @@ const useDataFromRequest = (request) => {
     const [ isLoading, setLoading ] = useState()
 
     useEffect(() => {
-        handleRequestResolver(request)
+        if(request) {
+            handleRequestResolver(request)
+        }
     }, [request])
 
     const handlePageClick = (r, page) => {
-        requestResolver([
-            r,
-            { offset: page * PAGE_SIZE }
-        ], setData, setLoading)
-        handleRequestResolver()
+        handleRequestResolver({
+            ...r,
+            params: {
+                ...r.params,
+                offset: page * PAGE_SIZE
+            }
+        })
     }
 
-    const handleRequestResolver = (r) => {
-        requestResolver([r], setData, setLoading)
+    const handleRequestResolver = (r, params) => {
+        requestResolver([r, params], setData, setLoading)
     }
 
     return { data, isLoading, handleRequestResolver, handlePageClick }

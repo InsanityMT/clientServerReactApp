@@ -7,7 +7,7 @@ const routes = [
     {
         path: '/coin-ranking/coins',
         name: 'Coins',
-        element: <Coins />,
+        element: <Coins />
     },
     {
         path: '/coin-ranking/coins/:id',

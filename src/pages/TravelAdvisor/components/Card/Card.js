@@ -1,11 +1,10 @@
 import React from 'react'
 import { CardName, CardStyles, CardContent } from './Card.styles'
+import Icon from '../../../../components/Icon/Icon'
 
 const Card = ({ item }) => {
     const { name, price, rating, num_reviews, hotel_class, photo } = item
-    const medium = photo?.images?.medium
-
-    console.log(item)
+    const url = photo?.images?.original?.url
     return (
         <>
             {
@@ -14,7 +13,7 @@ const Card = ({ item }) => {
                     <CardName>
                         {name}
                     </CardName>
-                    <img src={medium.url} width='200px' height='120px' />
+                    <Icon url={url} width={200} height={120} />
                     <CardContent>
                         <span>{price}</span>
                         <span>{num_reviews} reviews - {rating}</span>

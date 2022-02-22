@@ -22,7 +22,6 @@ const CoinDescription = styled.div`
 
 const CoinName = styled.div`
   font-size: 30px;
-
   text-align: center;
   margin-bottom: 30px;
 `

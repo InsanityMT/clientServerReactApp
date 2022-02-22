@@ -14,10 +14,36 @@ const coinGenerator = (id) => {
     }
 }
 
-const coinsRanking = {
-    coin: {
-        get: coinGenerator
+const coins = () => {
+    return {
+        method: 'GET',
+        url: `https://${BASE_URL}/coins`,
+        params: {
+            referenceCurrencyUuid: 'yhjMzLPhuIDl',
+            timePeriod: '24h',
+            tiers: '1',
+            orderBy: 'marketCap',
+            orderDirection: 'desc',
+            limit: '20',
+            offset: '0',
+        },
+        headers: {
+            ...API_KEY,
+            'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
+        }
     }
 }
 
+const coinsRanking = {
+    coin: {
+        get: coinGenerator
+    },
+    coins: {
+        get: coins
+    }
+}
+
+
+
 export default coinsRanking
+
