@@ -1,9 +1,9 @@
 import request from './request'
 
-const requestResolver = (args, setData, setLoading) => {
+const requestResolver = (args, updateData, setLoading) => {
     setLoading(true)
-    request(...args).then(({data}) => {
-        setData(data)
+    request(...args).then(({ data }) => {
+        updateData(data)
         setLoading(false)
     })
 }

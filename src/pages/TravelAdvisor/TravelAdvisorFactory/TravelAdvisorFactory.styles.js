@@ -16,7 +16,4 @@ const Cards = styled.div`
     overflow-y: scroll;
 `
 
-export {
-    TravelAdvisorFactoryStyles,
-    Cards
-}
+export { TravelAdvisorFactoryStyles, Cards }

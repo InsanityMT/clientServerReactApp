@@ -7,8 +7,8 @@ const TravelAdvisor = () => {
         <>
             <Header
                 routes={routes}
-                title='Travel Advisor'
-                root='/travel-advisor'
+                title="Travel Advisor"
+                root="/travel-advisor"
             />
             <Outlet />
         </>

@@ -7,13 +7,11 @@ const Coins = () => {
             return {
                 value: uuid,
                 label: name,
-                iconUrl
+                iconUrl,
             }
         })
     }
-    return (
-        <CoinsView serialization={serialization} />
-    )
+    return <CoinsView serialization={serialization} />
 }
 
 export default Coins

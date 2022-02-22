@@ -1,4 +1,5 @@
 import { API_KEY } from './default-api-keys'
+import { PAGE_SIZE } from './system-params'
 
 const BASE_URL = 'coinranking1.p.rapidapi.com'
 
@@ -9,8 +10,8 @@ const coinGenerator = (id) => {
         params: { timePeriod: '24h' },
         headers: {
             ...API_KEY,
-            'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
-        }
+            'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
+        },
     }
 }
 
@@ -24,26 +25,23 @@ const coins = () => {
             tiers: '1',
             orderBy: 'marketCap',
             orderDirection: 'desc',
-            limit: '20',
+            limit: PAGE_SIZE,
             offset: '0',
         },
         headers: {
             ...API_KEY,
             'x-rapidapi-host': 'coinranking1.p.rapidapi.com',
-        }
+        },
     }
 }
 
 const coinsRanking = {
     coin: {
-        get: coinGenerator
+        get: coinGenerator,
     },
     coins: {
-        get: coins
-    }
+        get: coins,
+    },
 }
 
-
-
 export default coinsRanking
-

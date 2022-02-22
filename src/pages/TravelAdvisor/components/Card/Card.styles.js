@@ -9,13 +9,13 @@ const CardStyles = styled.div`
     width: 14em;
     color: black;
     font-size: 20px;
-    border: 2px solid #2254C4;
+    border: 2px solid #2254c4;
     text-align: center;
     width: 20%;
 `
 const CardContent = styled.div`
     padding: 10px;
-    color: #808080FF;
+    color: #808080ff;
     display: flex;
     font-size: 24px;
     flex-direction: column;
@@ -27,8 +27,4 @@ const CardName = styled.div`
     padding: 10px;
 `
 
-export {
-    CardStyles,
-    CardContent,
-    CardName
-}
+export { CardStyles, CardContent, CardName }

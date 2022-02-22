@@ -4,13 +4,13 @@ const routes = [
     {
         path: '/travel-advisor/hotels',
         name: 'Hotels',
-        element: <TravelAdvisorFactory />
+        element: <TravelAdvisorFactory />,
     },
     {
         path: '/travel-advisor/restaurants',
         name: 'Restaurants',
-        element: <TravelAdvisorFactory />
-    }
+        element: <TravelAdvisorFactory />,
+    },
 ]
 
 export default routes

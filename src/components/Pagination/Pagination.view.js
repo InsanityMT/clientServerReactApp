@@ -15,7 +15,7 @@ const PaginationView = ({ pageCount, handlePageClick }) => {
             renderOnZeroPageCount={null}
             pageClassName="page"
             activeClassName="page-active"
-            breakClassName='page break'
+            breakClassName="page break"
         />
     )
 }

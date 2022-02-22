@@ -8,15 +8,7 @@ const Coin = () => {
     const { id } = useParams()
     const request = useMemo(() => coinsRanking.coin.get(id), [id])
     const { data, isLoading } = useDataFromRequest(request)
-    return (
-        <>
-            {
-                data?.coin && (
-                    <CoinView data={data} isLoading={isLoading} />
-                )
-            }
-        </>
-    )
+    return <>{data?.coin && <CoinView data={data} isLoading={isLoading} />}</>
 }
 
 export default Coin

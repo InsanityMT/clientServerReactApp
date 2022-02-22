@@ -3,30 +3,34 @@ import requestResolver from '../api/requestResolver'
 import { PAGE_SIZE } from '../constants/system-params'
 
 const useDataFromRequest = (request) => {
-    const [ data, setData ] = useState()
-    const [ isLoading, setLoading ] = useState()
+    const [data, setData] = useState()
+    const [isLoading, setLoading] = useState()
 
     useEffect(() => {
-        if(request) {
+        if (request) {
             handleRequestResolver(request)
         }
     }, [request])
 
-    const handlePageClick = (r, page) => {
-        handleRequestResolver({
-            ...r,
-            params: {
-                ...r.params,
-                offset: page * PAGE_SIZE
-            }
-        })
+    const handlePageClick = (r, params, page, updateData, pageSize = PAGE_SIZE) => {
+        handleRequestResolver(r, {
+            ...r.params,
+            ...params,
+            offset: page * pageSize,
+            limit: pageSize,
+        }, updateData)
     }
 
-    const handleRequestResolver = (r, params) => {
-        requestResolver([r, params], setData, setLoading)
+    const handleRequestResolver = (r, params, updateData = setData) => {
+        requestResolver([r, params], updateData, setLoading)
     }
 
-    return { data, isLoading, handleRequestResolver, handlePageClick }
+    return {
+        data,
+        isLoading,
+        handleRequestResolver,
+        handlePageClick,
+    }
 }
 
 export default useDataFromRequest
