@@ -3,7 +3,6 @@ import { PAGE_SIZE } from './system-params'
 
 const BASE_URL = 'travel-advisor.p.rapidapi.com'
 
-
 const restaurants = () => {
     return {
         method: 'GET',
@@ -16,47 +15,45 @@ const restaurants = () => {
             lunit: 'km',
             limit: PAGE_SIZE,
             open_now: 'false',
-            lang: 'en_US'
+            lang: 'en_US',
         },
         headers: {
             ...API_KEY,
             'x-rapidapi-host': BASE_URL,
-        }
+        },
     }
 }
 
 const hotels = () => {
     return {
-            method: 'get',
-            url: `https://${BASE_URL}/hotels/list`,
-            params: {
-                location_id: '293919',
-                adults: '1',
-                rooms: '1',
-                nights: '2',
-                offset: '0',
-                currency: 'USD',
-                order: 'asc',
-                limit: PAGE_SIZE,
-                sort: 'recommended',
-                lang: 'en_US',
-            },
-            headers: {
-                ...API_KEY,
-                'x-rapidapi-host': BASE_URL,
-            },
+        method: 'get',
+        url: `https://${BASE_URL}/hotels/list`,
+        params: {
+            location_id: '293919',
+            adults: '1',
+            rooms: '1',
+            nights: '2',
+            offset: '0',
+            currency: 'USD',
+            order: 'asc',
+            limit: PAGE_SIZE,
+            sort: 'recommended',
+            lang: 'en_US',
+        },
+        headers: {
+            ...API_KEY,
+            'x-rapidapi-host': BASE_URL,
+        },
     }
 }
 
 const travelAdvisor = {
     hotels: {
-        get: hotels
+        get: hotels,
     },
     restaurants: {
-        get: restaurants
-    }
+        get: restaurants,
+    },
 }
-
-
 
 export default travelAdvisor

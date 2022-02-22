@@ -1,5 +1,3 @@
 import Coins from './Coins'
 
-export {
-    Coins
-}
+export { Coins }

@@ -9,7 +9,7 @@ const SearchOption = (props) => {
         <components.Option {...props}>
             <Option to={value}>
                 <span>{label}</span>
-                <Icon url={iconUrl} width={20} height={20}/>
+                <Icon url={iconUrl} width={20} height={20} />
             </Option>
         </components.Option>
     )
