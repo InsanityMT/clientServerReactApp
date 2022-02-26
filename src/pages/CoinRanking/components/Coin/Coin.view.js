@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 import Loading from '../../../../components/Loading'
 import {
     CoinContainer,
@@ -8,6 +9,7 @@ import {
     CoinPrice,
 } from './Coins.styles'
 import Icon from '../../../../components/Icon/Icon'
+import { NavLink } from 'react-router-dom'
 
 const CoinView = ({ data, isLoading }) => {
     const { description, name, iconUrl, price } = data.coin
@@ -21,7 +23,12 @@ const CoinView = ({ data, isLoading }) => {
                         {name}
                         <Icon url={iconUrl} width={20} height={20} />
                     </CoinName>
-                    <CoinPrice>Current price: {price} $</CoinPrice>
+                    <CoinPrice>
+                        <span>Current price: {price} $ </span>
+                        <NavLink to='history'>
+                            <Button variant='outline-dark'>History</Button>
+                        </NavLink>
+                    </CoinPrice>
                 </CoinHeader>
                 <CoinDescription
                     dangerouslySetInnerHTML={{ __html: description }}
