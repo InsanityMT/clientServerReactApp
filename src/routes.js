@@ -11,9 +11,9 @@ const routes = [
         children: [...travelAdvisorRoutes],
     },
     {
-        path: '/coin-ranking',
+        path: '/crypto',
         element: <CoinRanking />,
-        name: 'Coin Ranking',
+        name: 'Crypto',
         children: [...coinsRoutes],
     },
 ]

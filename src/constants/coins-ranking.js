@@ -35,6 +35,18 @@ const coins = () => {
     }
 }
 
+const history = (id) => {
+    return {
+            method: 'GET',
+            url: `https://${BASE_URL}/coin/${id}/history`,
+            params: {referenceCurrencyUuid: 'yhjMzLPhuIDl', timePeriod: '1y'},
+            headers: {
+                ...API_KEY,
+                'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
+            }
+    }
+}
+
 const coinsRanking = {
     coin: {
         get: coinGenerator,
@@ -42,6 +54,9 @@ const coinsRanking = {
     coins: {
         get: coins,
     },
+    history: {
+        get: history,
+    }
 }
 
 export default coinsRanking
