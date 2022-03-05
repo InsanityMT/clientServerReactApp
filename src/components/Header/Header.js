@@ -11,22 +11,25 @@ const Header = ({ routes, title, root }) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        {routes.map(({ path, name }) => (
-                            name && (
-                                <Nav.Item key={nanoid()}>
-                                    <NavLink
-                                        to={path}
-                                        className={({ isActive }) =>
-                                            `${
-                                                isActive && 'active-nav-link'
-                                            } nav-link`
-                                        }
-                                    >
-                                        {name}
-                                    </NavLink>
-                                </Nav.Item>
+                        {routes.map(
+                            ({ path, name }) => (
+                                name && (
+                                    <Nav.Item key={nanoid()}>
+                                        <NavLink
+                                            to={path}
+                                            className={({ isActive }) =>
+                                                `${
+                                                    isActive &&
+                                                    'active-nav-link'
+                                                } nav-link`
+                                            }
+                                        >
+                                            {name}
+                                        </NavLink>
+                                    </Nav.Item>
+                                )
                             )
-                        ))}
+                        )}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

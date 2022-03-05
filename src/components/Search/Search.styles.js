@@ -1,4 +1,3 @@
-import { DebounceInput } from 'react-debounce-input'
 import styled from 'styled-components'
 import Select from 'react-select'
 
@@ -14,6 +13,7 @@ const SearchBar = styled(Select)`
     font-size: 22px;
     font-family: 'Titillium Web', sans-serif;
     margin-top: 15px;
+    margin-bottom: 15px;
     .search__menu {
         margin-top: 15px;
     }

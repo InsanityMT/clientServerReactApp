@@ -1,12 +1,8 @@
 import axios from 'axios'
 
-const request = async (options, params = {}, body = {}) => {
+const apiRequest = async (options, body = {}) => {
     const response = await axios.request({
         ...options,
-        params: {
-            ...options?.params,
-            ...params,
-        },
         data: {
             ...options?.data,
             ...body,
@@ -16,4 +12,4 @@ const request = async (options, params = {}, body = {}) => {
     return response.data
 }
 
-export default request
+export default apiRequest

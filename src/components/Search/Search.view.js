@@ -4,7 +4,7 @@ import _ from 'lodash'
 import SearchBar from './Search.styles'
 
 const SearchView = ({
-    onChangeHandle,
+    onInputHandle,
     isLoading,
     data,
     CustomOption,
@@ -14,7 +14,7 @@ const SearchView = ({
     return (
         <>
             <SearchBar
-                onInputChange={_.debounce(onChangeHandle, 500)}
+                onInputChange={_.debounce(onInputHandle, 500)}
                 value={value}
                 options={data}
                 components={{

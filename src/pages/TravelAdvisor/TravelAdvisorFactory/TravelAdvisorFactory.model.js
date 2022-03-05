@@ -1,42 +1,33 @@
 import React, { useMemo, useEffect } from 'react'
-import useDataFromRequest from '../../../hooks/useDataFromRequest'
 import { useLocation } from 'react-router-dom'
-import travelAdvisor from '../../../constants/travel-advisor'
 import TravelAdvisorFactoryView from './TravelAdvisorFactory.view'
 import { useDispatch, useSelector } from 'react-redux'
+import actions from '../../../actions'
+import { PAGE_SIZE } from '../../../constants/system-params'
 
 const TravelAdvisorFactory = () => {
-    const travelAdvisorState = useSelector(state => state.travelAdvisor)
+    const travelAdvisorState = useSelector(state => state.travelAdvisorReducer)
     const dispatch = useDispatch()
     const { pathname } = useLocation()
     const type = useMemo(() => pathname.split('/')[2], [pathname])
-    const request = useMemo(
-        () => travelAdvisor[type].get(),
-        [type]
-    )
-
-    const { data, isLoading, handlePageClick, handleRequestResolver } = useDataFromRequest()
-
 
     useEffect(() => {
-        if(!travelAdvisorState[type]) {
-            handleRequestResolver(request)
+        if (!travelAdvisorState[type]) {
+            dispatch(actions.rapidApiActions.travelAdvisorActions.getByType(type))
         }
-    }, [request])
+    }, [type])
 
-    useEffect(() => {
-        dispatch({
-            payload: data,
-            type: `travelAdvisor/${type}`
-        })
-    }, [data])
+    const handlePageClick = (page) => {
+        dispatch(actions.rapidApiActions.travelAdvisorActions.getByType(type, {
+            offset: (page + 1) * PAGE_SIZE
+        }))
+    }
 
     return (
         <>
             <TravelAdvisorFactoryView
                 data={travelAdvisorState[type] || []}
-                isLoading={isLoading}
-                handlePageClick={(page) => handlePageClick(request, {}, page)}
+                handlePageClick={handlePageClick}
             />
         </>
     )

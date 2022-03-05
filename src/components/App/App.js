@@ -6,7 +6,7 @@ const App = () => {
     const router = useRoutes(routes)
     return (
         <>
-            <Header routes={routes} title="APIs" />
+            <Header routes={routes} title="APIs" root='/'/>
             {router}
         </>
     )
