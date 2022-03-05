@@ -1,4 +1,4 @@
 import TravelAdvisor from './TravelAdvisor'
-import CoinRanking from './CoinRanking'
+import Crypto from './Crypto'
 
-export { TravelAdvisor, CoinRanking }
+export { TravelAdvisor, Crypto }

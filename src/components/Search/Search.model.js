@@ -1,55 +1,42 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import SearchView from './Search.view'
-import useDataFromRequest from '../../hooks/useDataFromRequest'
+import { useDispatch } from 'react-redux'
+import { PAGE_SIZE } from '../../constants/system-params'
 
-const Search = ({ serialization, request, CustomOption }) => {
-    const {
-        data,
-        isLoading,
-        handleRequestResolver,
-        handlePageClick
-    } = useDataFromRequest()
-    const [serializedData, setSerializedData] = useState([])
+const Search = ({ CustomOption, searchAction, data, isLoading }) => {
+    const dispatch = useDispatch()
     const [searchValue, setSearchValue] = useState('')
     const [page, setPage] = useState(0)
 
-    useEffect(() => {
-        setSerializedData(serialization(data))
-    }, [data])
-
-    const onChangeHandle = (value) => {
+    const onInputHandle = (value) => {
         if(value) {
-            handleRequestResolver(request, {
+            dispatch(searchAction({
                 search: value,
-                limit: 10,
-            })
+            }))
         }
         setPage(0)
         setSearchValue(value)
     }
 
-    const updateData = (props) => {
-        setSerializedData([...serializedData, ...serialization(props)])
-    }
-
     const onMenuScrollToBottom = () => {
-        if (searchValue) {
-            handlePageClick(request, {
+        if(searchValue) {
+            dispatch(searchAction({
                 search: searchValue,
-            }, page + 1, updateData, 10)
+                offset: (page + 1) * PAGE_SIZE,
+            }, 'add'))
             setPage((prevPage) => prevPage + 1)
         }
     }
 
     return (
-       <SearchView
-           data={serializedData}
-           onChangeHandle={onChangeHandle}
-           CustomOption={CustomOption}
-           isLoading={isLoading}
-           value={searchValue}
-           onMenuScrollToBottom={onMenuScrollToBottom}
-       />
+        <SearchView
+            data={data}
+            onInputHandle={onInputHandle}
+            CustomOption={CustomOption}
+            isLoading={isLoading}
+            value={searchValue}
+            onMenuScrollToBottom={onMenuScrollToBottom}
+        />
     )
 }
 
