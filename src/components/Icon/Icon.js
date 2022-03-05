@@ -1,10 +1,18 @@
 import React from 'react'
+import { IconStyles } from './Icon.styles'
 
-const Icon = ({ url, width = 50, height = 50 }) => {
+const Icon = ({ url, width = 50, height = 50, onClick = null }) => {
     return (
-        <object data={url} width={width} height={height}>
-            ''
-        </object>
+        <IconStyles onClick={onClick} width={width} height={height}>
+            <object
+                data={url}
+                width={width}
+                height={height}
+                style={{
+                    pointerEvents: 'none',
+                }}
+            />
+        </IconStyles>
     )
 }
 

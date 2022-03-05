@@ -1,7 +1,7 @@
-import { TravelAdvisor, CoinRanking } from './pages'
+import { TravelAdvisor, Crypto } from './pages'
 
 import travelAdvisorRoutes from './pages/TravelAdvisor/routes'
-import coinsRoutes from './pages/CoinRanking/routes'
+import coinsRoutes from './pages/Crypto/routes'
 
 const routes = [
     {
@@ -12,7 +12,7 @@ const routes = [
     },
     {
         path: '/crypto',
-        element: <CoinRanking />,
+        element: <Crypto />,
         name: 'Crypto',
         children: [...coinsRoutes],
     },
