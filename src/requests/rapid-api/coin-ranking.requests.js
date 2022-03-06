@@ -24,7 +24,7 @@ const coinsReq = (params) => {
             orderDirection: 'desc',
             limit: PAGE_SIZE,
             offset: '0',
-            ...params
+            ...params,
         },
         headers: headers(BASE_URL),
     }
@@ -39,8 +39,4 @@ const historyReq = (id) => {
     }
 }
 
-export {
-    coinReq,
-    coinsReq,
-    historyReq
-}
+export { coinReq, coinsReq, historyReq }

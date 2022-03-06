@@ -12,7 +12,7 @@ const Header = ({ routes, title, root }) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         {routes.map(
-                            ({ path, name }) => (
+                            ({ path, name }) =>
                                 name && (
                                     <Nav.Item key={nanoid()}>
                                         <NavLink
@@ -28,7 +28,6 @@ const Header = ({ routes, title, root }) => {
                                         </NavLink>
                                     </Nav.Item>
                                 )
-                            )
                         )}
                     </Nav>
                 </Navbar.Collapse>

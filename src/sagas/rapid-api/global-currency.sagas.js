@@ -10,6 +10,4 @@ function* getExchange({ request }) {
     }
 }
 
-export default [
-    takeEvery('GET_EXCHANGE_REQUEST', getExchange),
-]
+export default [takeEvery('GET_EXCHANGE_REQUEST', getExchange)]

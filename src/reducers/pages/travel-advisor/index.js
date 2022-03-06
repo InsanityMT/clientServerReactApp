@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
         case 'GET_BY_TYPE_SUCCEEDED':
             return {
                 ...state,
-                [payload.byType]: payload.data
+                [payload.byType]: payload.data,
             }
         default:
             return state

@@ -6,21 +6,27 @@ import actions from '../../../actions'
 import { PAGE_SIZE } from '../../../constants/system-params'
 
 const TravelAdvisorFactory = () => {
-    const travelAdvisorState = useSelector(state => state.travelAdvisorReducer)
+    const travelAdvisorState = useSelector(
+        (state) => state.travelAdvisorReducer
+    )
     const dispatch = useDispatch()
     const { pathname } = useLocation()
     const type = useMemo(() => pathname.split('/')[2], [pathname])
 
     useEffect(() => {
         if (!travelAdvisorState[type]) {
-            dispatch(actions.rapidApiActions.travelAdvisorActions.getByType(type))
+            dispatch(
+                actions.rapidApiActions.travelAdvisorActions.getByType(type)
+            )
         }
     }, [type])
 
     const handlePageClick = (page) => {
-        dispatch(actions.rapidApiActions.travelAdvisorActions.getByType(type, {
-            offset: (page + 1) * PAGE_SIZE
-        }))
+        dispatch(
+            actions.rapidApiActions.travelAdvisorActions.getByType(type, {
+                offset: (page + 1) * PAGE_SIZE,
+            })
+        )
     }
 
     return (

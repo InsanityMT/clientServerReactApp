@@ -32,12 +32,20 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "prepare": "husky install",
+        "refactor": "npx prettier ./ -w"
     },
     "eslintConfig": {
         "extends": [
             "react-app",
             "react-app/jest"
+        ]
+    },
+    "lint-staged": {
+        "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+            "npm run refactor",
+            "git add ."
         ]
     },
     "browserslist": {
@@ -52,5 +60,8 @@
             "last 1 safari version"
         ]
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "husky": "^7.0.4",
+        "lint-staged": "^12.3.5"
+    }
 }

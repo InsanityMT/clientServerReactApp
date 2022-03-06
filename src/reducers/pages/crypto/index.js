@@ -3,5 +3,5 @@ import exchangesReducer from './exchanges.reducer'
 
 export default {
     coinsReducer,
-    exchangesReducer
+    exchangesReducer,
 }

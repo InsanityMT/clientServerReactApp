@@ -1,18 +1,21 @@
-import { restaurantsReq, hotelsReq } from '../../requests/rapid-api/travel-advisor.requests'
+import {
+    restaurantsReq,
+    hotelsReq,
+} from '../../requests/rapid-api/travel-advisor.requests'
 
-const reqByType =  {
-    'hotels': hotelsReq,
-    'restaurants': restaurantsReq
+const reqByType = {
+    hotels: hotelsReq,
+    restaurants: restaurantsReq,
 }
 
 const getByType = (type, params) => {
     return {
         type: 'GET_BY_TYPE_REQUEST',
         request: reqByType[type](params),
-        byType: type
+        byType: type,
     }
 }
 
 export default {
-    getByType
+    getByType,
 }

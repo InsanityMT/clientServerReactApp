@@ -3,5 +3,5 @@ import travelAdvisorReducer from './travel-advisor'
 
 export default {
     ...cryptoReducers,
-    travelAdvisorReducer
+    travelAdvisorReducer,
 }
