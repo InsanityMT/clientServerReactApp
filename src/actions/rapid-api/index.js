@@ -5,5 +5,5 @@ import globalCurrencyActions from './global-currency.actions'
 export default {
     coinRankingActions,
     travelAdvisorActions,
-    globalCurrencyActions
+    globalCurrencyActions,
 }

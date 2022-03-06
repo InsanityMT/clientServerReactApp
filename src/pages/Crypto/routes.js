@@ -16,7 +16,7 @@ const routes = [
                 path: '/crypto/coins/:id/history',
                 element: <CoinHistory />,
             },
-        ]
+        ],
     },
     {
         path: '/crypto/exchanges',

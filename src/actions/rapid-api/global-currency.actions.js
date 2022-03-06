@@ -3,10 +3,10 @@ import { getExchangeReq } from '../../requests/rapid-api/global-currency.request
 const getExchange = (from, to, value) => {
     return {
         type: 'GET_EXCHANGE_REQUEST',
-        request: getExchangeReq(from, to, value)
+        request: getExchangeReq(from, to, value),
     }
 }
 
 export default {
-    getExchange
+    getExchange,
 }

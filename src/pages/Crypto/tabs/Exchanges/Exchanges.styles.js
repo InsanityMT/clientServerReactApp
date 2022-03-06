@@ -33,22 +33,27 @@ const ExchangesInput = styled(DebounceInput)`
     border-radius: 2px;
     -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
-    transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out 0.15s,
+        -webkit-box-shadow ease-in-out 0.15s;
+    -webkit-transition: border-color ease-in-out 0.15s,
+        -webkit-box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s,
+        -webkit-box-shadow ease-in-out 0.15s;
     :focus {
-      outline: 0 !important;
-      -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
-      box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
-      border-color: #66afe9;
+        outline: 0 !important;
+        -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%),
+            0 0 8px rgb(102 175 233 / 60%);
+        box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%),
+            0 0 8px rgb(102 175 233 / 60%);
+        border-color: #66afe9;
     }
     :hover {
-      outline: 0;
-      border-color: #a3b8c2;
-      -webkit-box-shadow: inset 0 1px 3px rgb(77 131 158 / 50%);
-      box-shadow: inset 0 1px 3px rgb(77 131 158 / 50%);
+        outline: 0;
+        border-color: #a3b8c2;
+        -webkit-box-shadow: inset 0 1px 3px rgb(77 131 158 / 50%);
+        box-shadow: inset 0 1px 3px rgb(77 131 158 / 50%);
     }
 `
 
@@ -77,7 +82,7 @@ const CrossContainer = styled.div`
 const CurrenciesDropdownButton = styled(DropdownButton)`
     align-self: flex-start;
     button {
-      border: none;
+        border: none;
     }
     & > div > div {
         max-height: 400px;
@@ -94,5 +99,5 @@ export {
     ExchangeContainer,
     ExchangesInput,
     CurrenciesDropdownButton,
-    CrossContainer
+    CrossContainer,
 }

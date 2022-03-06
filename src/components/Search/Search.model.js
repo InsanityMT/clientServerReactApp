@@ -9,21 +9,28 @@ const Search = ({ CustomOption, searchAction, data, isLoading }) => {
     const [page, setPage] = useState(0)
 
     const onInputHandle = (value) => {
-        if(value) {
-            dispatch(searchAction({
-                search: value,
-            }))
+        if (value) {
+            dispatch(
+                searchAction({
+                    search: value,
+                })
+            )
         }
         setPage(0)
         setSearchValue(value)
     }
 
     const onMenuScrollToBottom = () => {
-        if(searchValue) {
-            dispatch(searchAction({
-                search: searchValue,
-                offset: (page + 1) * PAGE_SIZE,
-            }, 'add'))
+        if (searchValue) {
+            dispatch(
+                searchAction(
+                    {
+                        search: searchValue,
+                        offset: (page + 1) * PAGE_SIZE,
+                    },
+                    'add'
+                )
+            )
             setPage((prevPage) => prevPage + 1)
         }
     }

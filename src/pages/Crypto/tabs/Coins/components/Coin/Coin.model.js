@@ -6,16 +6,12 @@ import actions from '../../../../../../actions'
 
 const Coin = () => {
     const dispatch = useDispatch()
-    const { coin } = useSelector(state => state.coinsReducer)
+    const { coin } = useSelector((state) => state.coinsReducer)
     const { id } = useParams()
     useEffect(() => {
         dispatch(actions.rapidApiActions.coinRankingActions.getCoin(id))
     }, [id])
-    return (
-        <>
-            {coin && <CoinView data={coin} />}
-        </>
-    )
+    return <>{coin && <CoinView data={coin} />}</>
 }
 
 export default Coin

@@ -10,23 +10,26 @@ const reducer = (state = initialState, action) => {
         case 'GET_COIN_SUCCEEDED':
             return {
                 ...state,
-                coin: payload?.data?.coin
+                coin: payload?.data?.coin,
             }
         case 'GET_COINS_SUCCEEDED':
             return {
                 ...state,
-                coins: payload.updateType === 'add' ? {
-                    stats: payload?.data?.stats,
-                    coins: [
-                        ...state.coins?.coins,
-                        ...payload?.data?.coins
-                    ]
-                } : payload?.data
+                coins:
+                    payload.updateType === 'add'
+                        ? {
+                              stats: payload?.data?.stats,
+                              coins: [
+                                  ...state.coins?.coins,
+                                  ...payload?.data?.coins,
+                              ],
+                          }
+                        : payload?.data,
             }
         case 'GET_HISTORY_SUCCEEDED':
             return {
                 ...state,
-                history: payload?.data?.history
+                history: payload?.data?.history,
             }
         default:
             return state

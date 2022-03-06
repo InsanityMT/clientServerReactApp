@@ -15,18 +15,17 @@ const getValueAt = (object, idx) => {
 }
 
 const sortByKey = (object) => {
-    return Object.keys(object).sort().reduce(
-        (obj, key) => {
-            obj[key] = object[key];
-            return obj;
-        },
-        {}
-    );
+    return Object.keys(object)
+        .sort()
+        .reduce((obj, key) => {
+            obj[key] = object[key]
+            return obj
+        }, {})
 }
 
 const findByKey = (object, key) => {
     let code = Object.keys(object).find((code, idx) => {
-        return code.charAt(0) === key.toUpperCase() ?  true : false
+        return code.charAt(0) === key.toUpperCase() ? true : false
     })
     return code || null
 }
