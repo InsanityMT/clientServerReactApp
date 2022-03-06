@@ -24,7 +24,7 @@ const CoinHistory = () => {
                 return acc
             }, [])
     }
-    const serializeData = useMemo(() => serialize(), [history])
+    const serializeData = useMemo(() => serialize(), [history, serialize])
 
     useEffect(() => {
         dispatch(actions.rapidApiActions.coinRankingActions.getHistory(id))

@@ -23,10 +23,18 @@ const sortByKey = (object) => {
         }, {})
 }
 
-const findByKey = (object, key) => {
-    let code = Object.keys(object).find((code, idx) => {
-        return code.charAt(0) === key.toUpperCase() ? true : false
-    })
-    return code || null
+const findByFirstLetter = (object, letter) => {
+    let res = Object.keys(object).find(
+        (item) => item.charAt(0).toUpperCase() === letter.toUpperCase()
+    )
+
+    return res || null
 }
-export { deleteKeysFromObject, getKeyAt, getValueAt, sortByKey, findByKey }
+
+export {
+    deleteKeysFromObject,
+    getKeyAt,
+    getValueAt,
+    sortByKey,
+    findByFirstLetter,
+}

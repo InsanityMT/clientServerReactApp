@@ -13,7 +13,7 @@ const Coins = () => {
             }
         })
     }
-    const data = useMemo(() => serialization(), [coins])
+    const data = useMemo(() => serialization(), [coins, serialization])
     return <CoinsView data={data} />
 }
 

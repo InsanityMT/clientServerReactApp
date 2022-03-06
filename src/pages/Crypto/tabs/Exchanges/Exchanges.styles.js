@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { DebounceInput } from 'react-debounce-input'
 import { DropdownButton } from 'react-bootstrap'
+import Dropdown from '../../../../components/Dropdown'
 
 const CurrenciesWindow = styled.div`
     display: flex;
@@ -79,25 +80,24 @@ const CrossContainer = styled.div`
     cursor: pointer;
 `
 
-const CurrenciesDropdownButton = styled(DropdownButton)`
-    align-self: flex-start;
-    button {
-        border: none;
-    }
-    & > div > div {
-        max-height: 400px;
+const DropdownContainer = styled.div`
+    align-self: flex-end;
+    margin-right: 12px;
+    .dropdown-menu {
+        max-height: 300px;
         overflow-y: scroll;
-    }
-    span {
-        font-weight: 700;
-        margin-right: 10px;
+        .code {
+            font-weight: 700;
+            margin-right: 10px;
+        }
     }
 `
+
 export {
     CurrenciesWindow,
     CurrName,
     ExchangeContainer,
     ExchangesInput,
-    CurrenciesDropdownButton,
     CrossContainer,
+    DropdownContainer,
 }
