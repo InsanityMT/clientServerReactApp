@@ -13,7 +13,10 @@ function* getCoin({ request }) {
 function* getCoins({ request, updateType }) {
     try {
         const data = yield apiRequest(request)
-        yield put({ type: 'GET_COINS_SUCCEEDED', payload: { data: data?.data, updateType} })
+        yield put({
+            type: 'GET_COINS_SUCCEEDED',
+            payload: { data: data?.data, updateType },
+        })
     } catch (e) {
         yield put({ type: 'GET_COINS_FAILED', message: e.message })
     }

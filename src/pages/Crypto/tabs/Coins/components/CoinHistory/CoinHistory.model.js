@@ -9,7 +9,7 @@ import actions from '../../../../../../actions'
 const CoinHistory = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    const { history, coin } = useSelector(state => state.coinsReducer)
+    const { history, coin } = useSelector((state) => state.coinsReducer)
 
     const serialize = () => {
         return _.cloneDeep(history)
@@ -24,14 +24,22 @@ const CoinHistory = () => {
                 return acc
             }, [])
     }
-    const serializeData = useMemo(() => serialize(), [history])
+    const serializeData = useMemo(() => serialize(), [history, serialize])
 
     useEffect(() => {
         dispatch(actions.rapidApiActions.coinRankingActions.getHistory(id))
-        if(coin === null) dispatch(actions.rapidApiActions.coinRankingActions.getCoin(id))
+        if (coin === null)
+            dispatch(actions.rapidApiActions.coinRankingActions.getCoin(id))
     }, [])
 
-    return <CoinHistoryView data={serializeData} history={history} coin={coin} id={id} />
+    return (
+        <CoinHistoryView
+            data={serializeData}
+            history={history}
+            coin={coin}
+            id={id}
+        />
+    )
 }
 
 export default CoinHistory

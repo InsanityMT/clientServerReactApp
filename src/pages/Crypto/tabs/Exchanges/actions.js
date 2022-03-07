@@ -5,6 +5,4 @@ const deleteCurrency = (code) => {
     }
 }
 
-export {
-    deleteCurrency
-}
+export { deleteCurrency }

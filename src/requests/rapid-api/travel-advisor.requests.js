@@ -16,7 +16,7 @@ const restaurantsReq = (params) => {
             limit: PAGE_SIZE,
             open_now: 'false',
             lang: 'en_US',
-            ...params
+            ...params,
         },
         headers: headers(BASE_URL),
     }
@@ -37,13 +37,10 @@ const hotelsReq = (params) => {
             limit: PAGE_SIZE,
             sort: 'recommended',
             lang: 'en_US',
-            ...params
+            ...params,
         },
         headers: headers(BASE_URL),
     }
 }
 
-export {
-    hotelsReq,
-    restaurantsReq
-}
+export { hotelsReq, restaurantsReq }

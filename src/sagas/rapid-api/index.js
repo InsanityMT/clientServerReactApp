@@ -5,5 +5,5 @@ import globalCurrencySagas from './global-currency.sagas'
 export default [
     ...coinRankingSagas,
     ...travelAdvisorSagas,
-    ...globalCurrencySagas
+    ...globalCurrencySagas,
 ]

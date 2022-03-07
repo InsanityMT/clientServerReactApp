@@ -8,7 +8,9 @@ const CoinsView = ({ data }) => {
     return (
         <div>
             <Search
-                searchAction={actions.rapidApiActions.coinRankingActions.getCoins}
+                searchAction={
+                    actions.rapidApiActions.coinRankingActions.getCoins
+                }
                 data={data}
                 CustomOption={SearchOption}
             />

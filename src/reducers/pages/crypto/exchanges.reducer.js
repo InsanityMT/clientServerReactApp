@@ -15,8 +15,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 currencies: {
                     ...state.currencies,
-                    [payload?.data?.baseCurrency?.code]: payload?.data?.baseCurrency?.amount,
-                    [payload?.data?.rateCurrency?.code]: payload?.data?.rateCurrency?.amount,
+                    [payload?.data?.baseCurrency?.code]:
+                        payload?.data?.baseCurrency?.amount,
+                    [payload?.data?.rateCurrency?.code]:
+                        payload?.data?.rateCurrency?.amount,
                 },
             }
 
