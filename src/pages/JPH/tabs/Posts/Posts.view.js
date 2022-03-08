@@ -1,10 +1,13 @@
 import React from 'react'
+import { PostsContainer } from './Posts.styles'
+import Post from './Components/Post/Post'
 
-const PostsView = () => {
+const PostsView = ({ posts }) => {
+    console.log(posts)
     return (
-        <div>
-            Posts
-        </div>
+        <PostsContainer>
+            { posts?.map(post => <Post post={post} key={post.id} /> )}
+        </PostsContainer>
     )
 }
 

@@ -1,4 +1,4 @@
-import { usersReq } from '../../requests/json-place-holder/jph.requests'
+import { postsReq, usersReq } from '../../requests/json-place-holder/jph.requests'
 
 const getUsers = () => {
     return {
@@ -7,6 +7,13 @@ const getUsers = () => {
     }
 }
 
+const getPosts = () => {
+    return {
+        type: 'GET_POSTS_REQUEST',
+        request: postsReq()
+    }
+}
+
 export default {
-    getUsers
+    getUsers, getPosts
 }

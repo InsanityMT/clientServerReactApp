@@ -1,5 +1,6 @@
 const initialState = {
-    users: null
+    users: null,
+    posts: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -10,9 +11,13 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 users: payload
             }
+        case 'GET_POSTS_SUCCEEDED':
+            return {
+                ...state,
+                posts: payload
+            }
         default:
             return state
-
     }
 }
 

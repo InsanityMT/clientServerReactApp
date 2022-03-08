@@ -7,4 +7,11 @@ const usersReq = () => {
     }
 }
 
-export { usersReq }
+const postsReq = () => {
+    return {
+        method: 'GET',
+        url: `${BASE_URL}/posts`,
+    }
+}
+
+export { usersReq, postsReq }
