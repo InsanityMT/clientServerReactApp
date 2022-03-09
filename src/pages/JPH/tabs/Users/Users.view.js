@@ -3,7 +3,6 @@ import { UsersContainer } from './Users.styles'
 import User from '../../../../components/User/User'
 
 const UsersView = ({ users }) => {
-    console.log(users)
     return (
         <UsersContainer>
             {users?.map((user, idx) =>

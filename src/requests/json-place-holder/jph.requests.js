@@ -21,4 +21,11 @@ const albumsReq = () => {
     }
 }
 
-export { usersReq, postsReq, albumsReq }
+const todosReq = () => {
+    return {
+        method: 'GET',
+        url: `${BASE_URL}/todos`
+    }
+}
+
+export { usersReq, postsReq, albumsReq, todosReq }

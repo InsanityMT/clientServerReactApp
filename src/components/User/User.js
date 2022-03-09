@@ -2,7 +2,6 @@ import React from 'react'
 import { AdditionalInformation, Address, MainInformation, UserContainer } from './User.styles'
 
 const User = ({ user }) => {
-    console.log(user)
     const { name, email, phone, website, address } = user
     const { city, street, zipcode } = address
     return (
