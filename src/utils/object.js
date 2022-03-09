@@ -27,7 +27,6 @@ const findByFirstLetter = (object, letter) => {
     let res = Object.keys(object).find(
         (item) => item.charAt(0).toUpperCase() === letter.toUpperCase()
     )
-
     return res || null
 }
 
