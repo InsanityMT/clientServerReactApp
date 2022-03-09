@@ -1,7 +1,8 @@
 const initialState = {
     users: null,
     posts: null,
-    albums: null
+    albums: null,
+    todos: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -21,6 +22,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 albums: payload
+            }
+        case 'GET_TODOS_SUCCEEDED':
+            return {
+                ...state,
+                todos: payload
             }
         default:
             return state

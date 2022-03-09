@@ -8,7 +8,6 @@ const PostsModel = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.JphActions.getPosts())
-        dispatch(actions.JphActions.getUsers())
     }, [])
     const { posts, users } = useSelector(state => state.jphReducer)
     return (
