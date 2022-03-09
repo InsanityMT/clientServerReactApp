@@ -14,4 +14,11 @@ const postsReq = () => {
     }
 }
 
-export { usersReq, postsReq }
+const albumsReq = () => {
+    return {
+        method: 'GET',
+        url: `${BASE_URL}/albums`
+    }
+}
+
+export { usersReq, postsReq, albumsReq }

@@ -8,10 +8,11 @@ const PostsModel = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.JphActions.getPosts())
+        dispatch(actions.JphActions.getUsers())
     }, [])
-    const { posts } = useSelector(state => state.jphReducer)
+    const { posts, users } = useSelector(state => state.jphReducer)
     return (
-        <PostsView posts={posts} />
+        <PostsView posts={posts} users={users} />
     )
 }
 
