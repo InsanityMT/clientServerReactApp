@@ -1,4 +1,4 @@
-import { postsReq, usersReq } from '../../requests/json-place-holder/jph.requests'
+import { albumsReq, postsReq, usersReq } from '../../requests/json-place-holder/jph.requests'
 
 const getUsers = () => {
     return {
@@ -14,6 +14,14 @@ const getPosts = () => {
     }
 }
 
+
+const getAlbums = () => {
+    return {
+        type: 'GET_ALBUMS_REQUEST',
+        request: albumsReq()
+    }
+}
+
 export default {
-    getUsers, getPosts
+    getUsers, getPosts, getAlbums
 }

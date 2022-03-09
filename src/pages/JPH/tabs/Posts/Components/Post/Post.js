@@ -2,7 +2,7 @@ import React from 'react'
 import { PostContainer, PostText, PostTittle } from './Post.styles'
 
 const Post = ({ post }) => {
-    const { body, userId, title } = post
+    const { body, userId, title, id } = post
     return (
         <PostContainer>
             {userId}
