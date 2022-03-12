@@ -2,7 +2,9 @@ const initialState = {
     users: null,
     posts: null,
     albums: null,
-    todos: null
+    todos: null,
+    comments: null,
+    photos: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -27,6 +29,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 todos: payload
+            }
+        case 'GET_COMMENTS_SUCCEEDED':
+            return {
+                ...state,
+                comments: payload
+            }
+        case 'GET_PHOTOS_SUCCEEDED':
+            return {
+                ...state,
+                photos: payload
             }
         default:
             return state

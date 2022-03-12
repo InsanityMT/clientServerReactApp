@@ -28,4 +28,18 @@ const todosReq = () => {
     }
 }
 
-export { usersReq, postsReq, albumsReq, todosReq }
+const commentsReq = () => {
+    return {
+        method: 'GET',
+        url: `${BASE_URL}/comments`
+    }
+}
+
+const photosReq = () => {
+    return {
+        method: 'GET',
+        url: `${BASE_URL}/photos`
+    }
+}
+
+export { usersReq, postsReq, albumsReq, todosReq, commentsReq, photosReq }

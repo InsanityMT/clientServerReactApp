@@ -1,4 +1,11 @@
-import { albumsReq, postsReq, todosReq, usersReq } from '../../requests/json-place-holder/jph.requests'
+import {
+    albumsReq,
+    commentsReq,
+    photosReq,
+    postsReq,
+    todosReq,
+    usersReq,
+} from '../../requests/json-place-holder/jph.requests'
 
 const getUsers = () => {
     return {
@@ -29,6 +36,20 @@ const getTodos = () => {
     }
 }
 
+const getComments = () => {
+    return {
+        type: 'GET_COMMENTS_REQUEST',
+        request: commentsReq()
+    }
+}
+
+const getPhotos = () => {
+    return {
+        type: 'GET_PHOTOS_REQUEST',
+        request: photosReq()
+    }
+}
+
 export default {
-    getUsers, getPosts, getAlbums, getTodos
+    getUsers, getPosts, getAlbums, getTodos, getComments, getPhotos
 }
