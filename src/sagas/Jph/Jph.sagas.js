@@ -37,9 +37,19 @@ function* getTodos({ request }) {
     }
 }
 
+function* getComments({ request }) {
+    try {
+        const data = yield apiRequest(request)
+        yield put({ type: 'GET_COMMENTS_SUCCEEDED', payload: data })
+    } catch (e) {
+        yield put({ type: 'GET_COMMENTS_FAILED', message: e.message })
+    }
+}
+
 export default [
     takeLatest('GET_USERS_REQUEST', getUsers),
     takeLatest('GET_POSTS_REQUEST', getPosts),
     takeLatest('GET_ALBUMS_REQUEST', getAlbums),
-    takeLatest('GET_TODOS_REQUEST', getTodos)
+    takeLatest('GET_TODOS_REQUEST', getTodos),
+    takeLatest('GET_COMMENTS_REQUEST', getComments)
 ]

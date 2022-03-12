@@ -8,10 +8,11 @@ const AlbumsModel = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.JphActions.getAlbums())
+        dispatch(actions.JphActions.getPhotos())
     }, [])
-    const { albums }  = useSelector(state => state.jphReducer)
+    const { albums, photos, users }  = useSelector(state => state.jphReducer)
     return (
-        <AlbumsView albums={albums} />
+        <AlbumsView albums={albums} photos={photos} users={users} />
     )
 }
 
