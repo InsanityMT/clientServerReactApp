@@ -2,16 +2,16 @@ import React, { useEffect } from 'react'
 import PostsView from './Posts.view'
 import { useDispatch, useSelector } from 'react-redux'
 import actions from '../../../../actions'
-import jphReducer from '../../../../reducers/pages/json-place-holder'
 
 const PostsModel = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.JphActions.getPosts())
+        dispatch(actions.JphActions.getComments())
     }, [])
-    const { posts, users } = useSelector(state => state.jphReducer)
+    const { posts, users, comments } = useSelector(state => state.jphReducer)
     return (
-        <PostsView posts={posts} users={users} />
+        <PostsView posts={posts} users={users} comments={comments} />
     )
 }
 
