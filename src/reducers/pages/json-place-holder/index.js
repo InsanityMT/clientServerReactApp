@@ -4,7 +4,7 @@ const initialState = {
     albums: null,
     todos: null,
     comments: null,
-    photos: null
+    photos: null,
 }
 
 const reducer = (state = initialState, action) => {
@@ -13,32 +13,32 @@ const reducer = (state = initialState, action) => {
         case 'GET_USERS_SUCCEEDED':
             return {
                 ...state,
-                users: payload
+                users: payload,
             }
         case 'GET_POSTS_SUCCEEDED':
             return {
                 ...state,
-                posts: payload
+                posts: payload,
             }
         case 'GET_ALBUMS_SUCCEEDED':
             return {
                 ...state,
-                albums: payload
+                albums: payload,
             }
         case 'GET_TODOS_SUCCEEDED':
             return {
                 ...state,
-                todos: payload
+                todos: payload,
             }
         case 'GET_COMMENTS_SUCCEEDED':
             return {
                 ...state,
-                comments: payload
+                comments: payload,
             }
         case 'GET_PHOTOS_SUCCEEDED':
             return {
                 ...state,
-                photos: payload
+                photos: payload,
             }
         default:
             return state

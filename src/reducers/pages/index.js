@@ -5,5 +5,5 @@ import jphReducer from './json-place-holder'
 export default {
     ...cryptoReducers,
     travelAdvisorReducer,
-    jphReducer
+    jphReducer,
 }

@@ -21,8 +21,8 @@ const routes = [
         path: '/jph',
         element: <Jph />,
         name: 'Json place holder',
-        children: [...jphRoutes]
-    }
+        children: [...jphRoutes],
+    },
 ]
 
 export default routes

@@ -46,10 +46,20 @@ function* getComments({ request }) {
     }
 }
 
+function* getPhotos({ request }) {
+    try {
+        const data = yield apiRequest(request)
+        yield put({ type: 'GET_PHOTOS_SUCCEEDED', payload: data })
+    } catch (e) {
+        yield put({ type: 'GET_PHOTOS_FAILED', message: e.message })
+    }
+}
+
 export default [
     takeLatest('GET_USERS_REQUEST', getUsers),
     takeLatest('GET_POSTS_REQUEST', getPosts),
     takeLatest('GET_ALBUMS_REQUEST', getAlbums),
     takeLatest('GET_TODOS_REQUEST', getTodos),
-    takeLatest('GET_COMMENTS_REQUEST', getComments)
+    takeLatest('GET_COMMENTS_REQUEST', getComments),
+    takeLatest('GET_PHOTOS_REQUEST', getPhotos),
 ]

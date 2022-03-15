@@ -17,28 +17,28 @@ const postsReq = () => {
 const albumsReq = () => {
     return {
         method: 'GET',
-        url: `${BASE_URL}/albums`
+        url: `${BASE_URL}/albums`,
     }
 }
 
 const todosReq = () => {
     return {
         method: 'GET',
-        url: `${BASE_URL}/todos`
+        url: `${BASE_URL}/todos`,
     }
 }
 
 const commentsReq = () => {
     return {
         method: 'GET',
-        url: `${BASE_URL}/comments`
+        url: `${BASE_URL}/comments`,
     }
 }
 
 const photosReq = () => {
     return {
         method: 'GET',
-        url: `${BASE_URL}/photos`
+        url: `${BASE_URL}/photos`,
     }
 }
 

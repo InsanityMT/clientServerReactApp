@@ -9,14 +9,19 @@ import { UserContainer } from '../../Users.styles'
 const UserModel = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
+    const { users } = useSelector((state) => state.jphReducer)
+    const user = useMemo(
+        () => findItemInCollectionByKeyValue(users, 'id', +id),
+        [users, id]
+    )
+
     useEffect(() => {
-       if (!users) dispatch(actions.JphActions.getUsers())
+        if (!users) dispatch(actions.JphActions.getUsers())
     }, [])
-    const { users } = useSelector(state => state.jphReducer)
-    const user = useMemo(() => findItemInCollectionByKeyValue(users, 'id', +id), [users, id])
+
     return (
         <UserContainer>
-       <User user={user} />
+            <User user={user} />
         </UserContainer>
     )
 }

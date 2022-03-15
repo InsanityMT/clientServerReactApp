@@ -10,46 +10,50 @@ import {
 const getUsers = () => {
     return {
         type: 'GET_USERS_REQUEST',
-        request: usersReq()
+        request: usersReq(),
     }
 }
 
 const getPosts = () => {
     return {
         type: 'GET_POSTS_REQUEST',
-        request: postsReq()
+        request: postsReq(),
     }
 }
-
 
 const getAlbums = () => {
     return {
         type: 'GET_ALBUMS_REQUEST',
-        request: albumsReq()
+        request: albumsReq(),
     }
 }
 
 const getTodos = () => {
     return {
         type: 'GET_TODOS_REQUEST',
-        request: todosReq()
+        request: todosReq(),
     }
 }
 
 const getComments = () => {
     return {
         type: 'GET_COMMENTS_REQUEST',
-        request: commentsReq()
+        request: commentsReq(),
     }
 }
 
 const getPhotos = () => {
     return {
         type: 'GET_PHOTOS_REQUEST',
-        request: photosReq()
+        request: photosReq(),
     }
 }
 
 export default {
-    getUsers, getPosts, getAlbums, getTodos, getComments, getPhotos
+    getUsers,
+    getPosts,
+    getAlbums,
+    getTodos,
+    getComments,
+    getPhotos,
 }

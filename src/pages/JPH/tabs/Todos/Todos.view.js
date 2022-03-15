@@ -5,12 +5,12 @@ const TodosView = ({ todos }) => {
     console.log(todos)
     return (
         <TodosContainer>
-            {todos?.map(todo =>
+            {todos?.map((todo) => (
                 <TodoContainer>
                     <span>{todo.userId}</span>
                     <span>{todo.title}</span>
                 </TodoContainer>
-            )}
+            ))}
         </TodosContainer>
     )
 }
