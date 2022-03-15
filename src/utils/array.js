@@ -13,20 +13,20 @@ const findByFirstLetter = (arr, letter) => {
 //Collections [{}]
 
 const findItemInCollectionByKeyValue = (collection, key, value) => {
-    return _.find(collection, {[key]: value}) || null
+    return _.find(collection, { [key]: value }) || null
 }
 
 const filterCollectionByKeyValue = (collection, key, value) => {
-    return collection.filter((item) => item[key].includes(value)) || []
+    return _.filter(collection, { [key]: value }) || null
 }
 
 const getUniqValuesFromCollectionByKey = (collection, key) => {
-    return [...new Set(collection.map(o => o[key] ||  null))]
+    return [...new Set(collection.map((o) => o[key] || null))]
 }
 
 export {
     findByFirstLetter,
     findItemInCollectionByKeyValue,
     filterCollectionByKeyValue,
-    getUniqValuesFromCollectionByKey
+    getUniqValuesFromCollectionByKey,
 }

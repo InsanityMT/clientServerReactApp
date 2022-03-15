@@ -1,3 +1,3 @@
-import Post from './Post'
+import PostModel from './Post.model'
 
-export default Post
+export default PostModel

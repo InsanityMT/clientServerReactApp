@@ -5,10 +5,9 @@ import User from '../../../../components/User/User'
 const UsersView = ({ users }) => {
     return (
         <UsersContainer>
-            {users?.map((user, idx) =>
-                <User user={user} key={user.id}/>
-            )}
-
+            {users?.map((user, idx) => (
+                <User user={user} key={user.id} />
+            ))}
         </UsersContainer>
     )
 }

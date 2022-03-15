@@ -25,7 +25,7 @@ const TravelAdvisorFactory = () => {
         dispatch(
             actions.rapidApiActions.travelAdvisorActions.getByType(type, {
                 offset: (page + 1) * PAGE_SIZE,
-            })  
+            })
         )
     }
 

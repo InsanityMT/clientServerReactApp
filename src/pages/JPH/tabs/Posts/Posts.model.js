@@ -6,13 +6,12 @@ import actions from '../../../../actions'
 const PostsModel = () => {
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(actions.JphActions.getPosts())
-        dispatch(actions.JphActions.getComments())
+        if (!posts) dispatch(actions.JphActions.getPosts())
+        if (!comments) dispatch(actions.JphActions.getComments())
+        if (!users) dispatch(actions.JphActions.getComments())
     }, [])
-    const { posts, users, comments } = useSelector(state => state.jphReducer)
-    return (
-        <PostsView posts={posts} users={users} comments={comments} />
-    )
+    const { posts, users, comments } = useSelector((state) => state.jphReducer)
+    return <PostsView posts={posts} users={users} comments={comments} />
 }
 
 export default PostsModel

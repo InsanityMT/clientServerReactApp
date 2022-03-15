@@ -1,23 +1,30 @@
 import React from 'react'
-import { AdditionalInformation, Address, MainInformation, UserContainer } from './User.styles'
+import {
+    AdditionalInformation,
+    Address,
+    MainInformation,
+    UserContainer,
+    UserLink,
+} from './User.styles'
+import { NavLink } from 'react-router-dom'
 
 const User = ({ user }) => {
-    const { name, email, phone, website, address } = user
-    const { city, street, zipcode } = address
     return (
         <UserContainer>
             <MainInformation>
-                Name: {name} <br />
-                Email: {email}
+                <UserLink to={`/jph/users/${user.id}`}>
+                    Name: {user?.name}
+                </UserLink>
+                <span>Email: {user?.email}</span>
             </MainInformation>
             <AdditionalInformation>
-                Phone: {phone} <br/>
-                website: {website}
+                <span>Phone: {user?.phone}</span>
+                <span>website: {user?.website}</span>
             </AdditionalInformation>
             <Address>
-                City: {city} <br/>
-                Street: {street} <br/>
-                Zip-code: P{zipcode}
+                <span>City: {user?.address?.city}</span>
+                <span>Street: {user?.address?.street}</span>
+                <span>Zip-code: {user?.address?.zipcode}</span>
             </Address>
         </UserContainer>
     )

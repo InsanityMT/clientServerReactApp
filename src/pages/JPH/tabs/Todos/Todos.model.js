@@ -8,10 +8,8 @@ const TodosModel = () => {
     useEffect(() => {
         dispatch(actions.JphActions.getTodos())
     }, [])
-    const { todos } = useSelector(state => state.jphReducer)
-    return (
-        <TodosView todos={todos} />
-    )
+    const { todos } = useSelector((state) => state.jphReducer)
+    return <TodosView todos={todos} />
 }
 
 export default TodosModel
